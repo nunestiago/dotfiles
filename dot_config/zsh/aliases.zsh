@@ -15,7 +15,7 @@ alias trim="awk '{\$1=\$1;print}'"
 alias cz="chezmoi"
 alias vf="vifm"
 alias code="code-insiders"
-
+alias pnpmu="curl -fsSL https://get.pnpm.io/install.sh | sh -"
 
 # GIT ALIASES -----------------------------------------------------------------
 alias gc='git commit'
