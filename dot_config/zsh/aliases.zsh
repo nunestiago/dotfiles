@@ -15,7 +15,11 @@ alias trim="awk '{\$1=\$1;print}'"
 alias cz="chezmoi"
 alias vf="vifm"
 alias code="code-insiders"
+alias cdev="cd /run/media/tiagon/HD1TB/Dev/"
+alias spt="ncspot"
 alias pnpmu="curl -fsSL https://get.pnpm.io/install.sh | sh -"
+alias single="~/.screenlayout/single.sh"
+alias duo="~/.screenlayout/duo.sh"
 
 # GIT ALIASES -----------------------------------------------------------------
 alias gc='git commit'
