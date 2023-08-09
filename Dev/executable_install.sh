@@ -60,7 +60,7 @@ function clean_pacman_cache() {
 
 function download_install_fira_code() {
     wget -P /tmp "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip"
-    sudo unzip FiraCode.zip -d /usr/share/fonts/fira
+    sudo unzip /tmp/FiraCode.zip -d /usr/share/fonts/fira
 }
 
 function setup_rust() {
@@ -110,6 +110,7 @@ function setup_asdf() {
 }
 
 install_yay_packages
+download_install_fira_code
 setup_rust
 setup_zsh
 setup_chezmoi
