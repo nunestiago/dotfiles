@@ -6,11 +6,13 @@ alias vim='nvim -w ~/.vimlog "$@"'
 
 alias ta='tmux attach -t'
 
-alias l='exa -lah --icons --git --grid'
+alias l='eza -al --color=always --group-directories-first --grid'
 alias c='clear'
 alias s='source ~/.zshrc'
 alias jj='pbpaste | jsonpp | pbcopy'
 alias trim="awk '{\$1=\$1;print}'"
+
+alias grep='grep --color=auto' # colorize output (good for log files)
 
 alias vf="vifm"
 alias code="code-insiders"
@@ -18,6 +20,7 @@ alias spt="ncspot"
 alias single="~/.screenlayout/single.sh"
 alias duo="~/.screenlayout/duo.sh"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias yip='yarn install --pure-lockfile'
 
 # GIT ALIASES -----------------------------------------------------------------
 alias gc='git commit'
@@ -100,4 +103,4 @@ open-at-line () {
   vim $(rg --line-number "${1:-.}" | sk --delimiter ':' --preview 'bat --color=always --highlight-line {2} {1}' | awk -F ':' '{print "+"$2" "$1}')
 }
 
-alias yip='yarn install --pure-lockfile'
+mkfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }

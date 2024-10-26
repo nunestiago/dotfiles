@@ -82,13 +82,6 @@ source_if_exists ~/.config/zsh/aliases.zsh
 
 bindkey '^?' backward-delete-char
 
-# pnpm
-export PNPM_HOME="/home/a/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/tiagon/.zsh/completions:"* ]]; then export FPATH="/home/tiagon/.zsh/completions:$FPATH"; fi
 . "/home/tiagon/.deno/env"
@@ -104,9 +97,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # bun completions
 [ -s "/home/tiagon/.bun/_bun" ] && source "/home/tiagon/.bun/_bun"
 
-# pnpm endsource /home/tiagon/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-mkfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
-
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # Load Angular CLI autocompletion.
@@ -120,3 +110,11 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
 export PATH="/home/tiagon/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 export LD_LIBRARY_PATH=/home/tiagon/.local/lib/arch-mojo:$LD_LIBRARY_PATH
 
+
+# pnpm
+export PNPM_HOME="/home/a/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
