@@ -18,7 +18,8 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1; 
+zinit light romkatv/powerlevel10k
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -39,6 +40,9 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Initialize atuin pior to history
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # Keybindings
 bindkey -v
@@ -96,8 +100,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # bun completions
 [ -s "/home/tiagon/.bun/_bun" ] && source "/home/tiagon/.bun/_bun"
-
-eval "$(atuin init zsh --disable-up-arrow)"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
